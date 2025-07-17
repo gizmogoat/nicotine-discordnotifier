@@ -1,0 +1,4 @@
+Version = "1.0.0"
+Authors = ["gizmogoat"]
+Name = "Discord Notifier"
+Description = "Relays upload/download events to a Discord webhook"

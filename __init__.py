@@ -29,3 +29,9 @@ class Plugin(BasePlugin):
 
     def download_started_notification(self, user, virtual_path, real_path):
         self.post_webhook(f"{user} - Nicotine+", f"Downloading ``{real_path}`` from {user}")
+
+    def server_connect_notification(self):
+        self.post_webhook(f"Nicotine+", "**Connection dropped from Soulseek server**")
+
+    def server_connect_notification(self):
+        self.post_webhook(f"Nicotine+", "**Connection established to Soulseek server**")

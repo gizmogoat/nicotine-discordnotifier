@@ -15,6 +15,8 @@ class Plugin(BasePlugin):
         }
 
     def post_webhook(self, username, content):
+        if not self.settings["webhook"]: return # Do not attempt to do anything if no hook had been set
+        
         result = requests.post(self.settings["webhook"], { "content": content, "username": username })
         try:
             result.raise_for_status()

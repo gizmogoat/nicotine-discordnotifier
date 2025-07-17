@@ -23,4 +23,7 @@ class Plugin(BasePlugin):
 
 
     def upload_started_notification(self, user, virtual_path, real_path):
-        self.post_webhook(user, f"Downloading ``{real_path}``")
+        self.post_webhook(f"{user} - Nicotine+", f"Uploading ``{real_path}`` to {user}")
+
+    def download_started_notification(self, user, virtual_path, real_path):
+        self.post_webhook(f"{user} - Nicotine+", f"Downloading ``{real_path}`` from {user}")
